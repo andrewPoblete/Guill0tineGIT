@@ -1,0 +1,448 @@
+[
+	{
+		"name": "Pushed",
+		"consequence": ["ex_before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 2 places in line.",
+		"stays": false,
+		"position": 1,
+		"dealable": true
+	},
+	{
+		"name": "Pushed",
+		"consequence": ["ex_before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 2 places in line.",
+		"stays": false,
+		"position": 1,
+		"dealable": true
+	},
+	{
+		"name": "L'Idiot",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 2,
+		"dealable": true
+	},
+	{
+		"name": "L'Idiot",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 2,
+		"dealable": true
+	},
+	{
+		"name": "L'Idiot",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 2,
+		"dealable": true
+	},
+	{
+		"name": "L'Idiot",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 2,
+		"dealable": true
+	},
+	{
+		"name": "The Long Walk",
+		"consequence": [],
+		"actionType": "rearrange",
+		"description": "Reverse the order of the line.",
+		"stays": false,
+		"position": 2,
+		"dealable": false
+	},
+	{
+		"name": "Milling in Line",
+		"consequence": [],
+		"actionType": "rearrange",
+		"description": "Randomly rearrange the first 5 nobles in line.",
+		"stays": false,
+		"position": 4,
+		"dealable": false
+	},
+	{
+		"name": "Milling in Line",
+		"consequence": [],
+		"actionType": "rearrange",
+		"description": "Randomly rearrange the first 5 nobles in line.",
+		"stays": false,
+		"position": 4,
+		"dealable": false
+	},
+	{
+		"name": "Stumble",
+		"consequence": ["before", 1],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 1 place in line.",
+		"stays": false,
+		"position": 5,
+		"dealable": true
+	},
+	{
+		"name": "Stumble",
+		"consequence": ["before", 1],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 1 place in line.",
+		"stays": false,
+		"position": 5,
+		"dealable": true
+	},
+	{
+		"name": "Stumble",
+		"consequence": ["before", 1],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 1 place in line.",
+		"stays": false,
+		"position": 5,
+		"dealable": true
+	},
+	{
+		"name": "Stumble",
+		"consequence": ["before", 1],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 1 place in line.",
+		"stays": false,
+		"position": 5,
+		"dealable": true
+	},
+	{
+		"name": "Civic Pride",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a Green noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 6,
+		"dealable": false
+	},
+	{
+		"name": "Was That My Name?",
+		"consequence": ["before", 3],
+		"actionType": "move",
+		"description": "Move a noble forward up to 3 places in line.",
+		"stays": false,
+		"position": 7,
+		"dealable": true
+	},
+	{
+		"name": "Was That My Name?",
+		"consequence": ["before", 3],
+		"actionType": "move",
+		"description": "Move a noble forward up to 3 places in line.",
+		"stays": false,
+		"position": 7,
+		"dealable": true
+	},
+	{
+		"name": "Trip",
+		"consequence": ["after", 1],
+		"actionType": "move",
+		"description": "Move a noble backward exactly 1 place in line. You may play another action card this turn.",
+		"stays": false,
+		"position": 8,
+		"additional": "",
+		"dealable": true
+	},
+	{
+		"name": "Trip",
+		"consequence": ["after", 1],
+		"actionType": "move",
+		"description": "Move a noble backward exactly 1 place in line. You may play another action card this turn.",
+		"stays": false,
+		"position": 8,
+		"additional": "",
+		"dealable": true
+	},
+	{
+		"name": "Trip",
+		"consequence": ["after", 1],
+		"actionType": "move",
+		"description": "Move a noble backward exactly 1 place in line. You may play another action card this turn.",
+		"stays": false,
+		"position": 8,
+		"additional": "",
+		"dealable": true
+	},
+	{
+		"name": "Trip",
+		"consequence": ["after", 1],
+		"actionType": "move",
+		"description": "Move a noble backward exactly 1 place in line. You may play another action card this turn.",
+		"stays": false,
+		"position": 8,
+		"additional": "",
+		"dealable": true
+	},
+	{
+		"name": "Friend of the Queen",
+		"consequence": ["after", 2],
+		"actionType": "move",
+		"description": "Move a noble backward up to 2 places in line.",
+		"stays": false,
+		"position": 9,
+		"dealable": true
+	},
+	{
+		"name": "Friend of the Queen",
+		"consequence": ["after", 2],
+		"actionType": "move",
+		"description": "Move a noble backward up to 2 places in line.",
+		"stays": false,
+		"position": 9,
+		"dealable": true
+	},
+	{
+		"name": "Friend of the Queen",
+		"consequence": ["after", 2],
+		"actionType": "move",
+		"description": "Move a noble backward up to 2 places in line.",
+		"stays": false,
+		"position": 9,
+		"dealable": true
+	},
+	{
+		"name": "Friend of the Queen",
+		"consequence": ["after", 2],
+		"actionType": "move",
+		"description": "Move a noble backward up to 2 places in line.",
+		"stays": false,
+		"position": 9,
+		"dealable": true
+	},
+	{
+		"name": "Bribed Guards",
+		"consequence": ["toBack"],
+		"actionType": "move",
+		"description": "Move the noble at the front of the line to the end of the line.",
+		"stays": false,
+		"position": 10,
+		"dealable": false
+	},
+	{
+		"name": "Fainting Spell",
+		"consequence": ["after", 3],
+		"actionType": "move",
+		"description": "Move a noble backward up to 3 places in line.",
+		"stays": false,
+		"position": 11,
+		"dealable": true
+	},
+	{
+		"name": "Fainting Spell",
+		"consequence": ["after", 3],
+		"actionType": "move",
+		"description": "Move a noble backward up to 3 places in line.",
+		"stays": false,
+		"position": 11,
+		"dealable": true
+	},
+	{
+		"name": "Ignoble Noble",
+		"consequence": ["ex_before", 4],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 4 places in line.",
+		"stays": false,
+		"position": 12,
+		"dealable": true
+	},
+	{
+		"name": "Ignoble Noble",
+		"consequence": ["ex_before", 4],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 4 places in line.",
+		"stays": false,
+		"position": 12,
+		"dealable": true
+	},
+	{
+		"name": "Ignoble Noble",
+		"consequence": ["ex_before", 4],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 4 places in line.",
+		"stays": false,
+		"position": 12,
+		"dealable": true
+	},
+	{
+		"name": "Ignoble Noble",
+		"consequence": ["ex_before", 4],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 4 places in line.",
+		"stays": false,
+		"position": 12,
+		"dealable": true
+	},
+	{
+		"name": "'Tis a Far Better Thing",
+		"consequence": ["ex_before", 3],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 3 places in line.",
+		"stays": false,
+		"position": 13,
+		"dealable": true
+	},
+	{
+		"name": "Extra Cart",
+		"consequence": [],
+		"actionType": "lineChange",
+		"description": "Add 3 nobles from teh noble deck to the end of the line.",
+		"stays": false,
+		"position": 14,
+		"dealable": false
+	},
+	{
+		"name": "Extra Cart",
+		"consequence": [],
+		"actionType": "lineChange",
+		"description": "Add 3 nobles from teh noble deck to the end of the line.",
+		"stays": false,
+		"position": 14,
+		"dealable": false
+	},
+	{
+		"name": "Majesty",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a Purle noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 15,
+		"dealable": false
+	},
+	{
+		"name": "Indifferent Public",
+		"consequence": [],
+		"actionType": "points",
+		"description": "Put this card in front of you. Any Gray nobles in your score pile are worth 1 point instead of their normal values.",
+		"stays": true,
+		"position": 16,
+		"dealable": true
+	},
+	{
+		"name": "Civic Support",
+		"consequence": [],
+		"actionType": "points",
+		"description": "Play this card in front of you. It is worth +1 point for each Green noble in your score pile.",
+		"stays": true,
+		"position": 17,
+		"dealable": true
+	},
+	{
+		"name": "Military Support",
+		"consequence": [],
+		"actionType": "points",
+		"description": "Play this card in front of you. It is worth +1 point for each Red noble in your score pile.",
+		"stays": true,
+		"position": 18,
+		"dealable": true
+	},
+	{
+		"name": "Church Support",
+		"consequence": [],
+		"actionType": "points",
+		"description": "Play this card in front of you. It is worth +1 point for each Blue noble in your score pile.",
+		"stays": true,
+		"position": 19,
+		"dealable": true
+	},
+	{
+		"name": "Fountain of Blood",
+		"consequence": [],
+		"actionType": "points",
+		"description": "Put this card in front of you. It is worth 2 points.",
+		"stays": true,
+		"position": 20,
+		"dealable": true
+	},
+	{
+		"name": "Public Demand",
+		"consequence": ["toFront"],
+		"actionType": "move",
+		"description": "Move any noble in line to the front of the line.",
+		"stays": false,
+		"position": 21,
+		"dealable": true
+	},
+	{
+		"name": "Double Feature",
+		"consequence": [],
+		"actionType": "lineChange",
+		"description": "Collect an additional noble from the front of the line this turn.",
+		"stays": false,
+		"position": 22,
+		"dealable": false
+	},
+	{
+		"name": "Double Feature",
+		"consequence": [],
+		"actionType": "lineChange",
+		"description": "Collect an additional noble from the front of the line this turn.",
+		"stays": false,
+		"position": 22,
+		"dealable": false
+	},
+	{
+		"name": "Rain Delay",
+		"consequence": [],
+		"actionType": "changeActions",
+		"description": "Shuffle all players' hands into the action deck and deal out 5 new actions cards to each player.",
+		"stays": false,
+		"position": 23,
+		"dealable": false
+	},
+	{
+		"name": "Opinionated Guards",
+		"consequence": [],
+		"actionType": "rearrange",
+		"description": "Rearrange the first 4 nobles in line any way you wish.",
+		"stays": false,
+		"position": 24,
+		"dealable": false
+	},
+	{
+		"name": "Mass Confusion",
+		"consequence": [],
+		"actionType": "rearrange",
+		"description": "Put all nobles in line in the noble deck. Shuffle the noble deck and deal out the same number of nobles in a new line.",
+		"stays": false,
+		"position": 25,
+		"dealable": false
+	},
+	{
+		"name": "Military Might",
+		"consequence": ["before", 2],
+		"actionType": "move",
+		"description": "Move a Red noble forward up to 2 places in line.",
+		"stays": false,
+		"position": 26,
+		"dealable": false
+	},
+	{
+		"name": "Pushed",
+		"consequence": ["ex_before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 2 places in line.",
+		"stays": false,
+		"position": 1,
+		"dealable": true
+	},
+	{
+		"name": "Pushed",
+		"consequence": ["ex_before", 2],
+		"actionType": "move",
+		"description": "Move a noble forward exactly 2 places in line.",
+		"stays": false,
+		"position": 1,
+		"dealable": true
+	}
+
+]

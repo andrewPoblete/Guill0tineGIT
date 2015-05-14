@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+		<title>Guillotine</title>
+		
+		<!-- CSS -->
+		<link href='http://fonts.googleapis.com/css?family=Alegreya:400italic,400' rel='stylesheet' type='text/css'>
+		<!-- <link rel="stylesheet" href="css/normalize.css"> -->
+		<link rel="stylesheet" href="css/styles.css">
+
+    <!-- JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="objects.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header class="hidden">
+				<ul></ul>
+			</header>
+			<div id="gameBoard">
+			
+				<div id="noblesLine"></div>
+				<div id="chop" class="hidden"></div>
+				<div class="myBoard current">
+					<div class="cardsPlayedBoard"></div>
+					<div class="myHand"></div>
+				</div>
+				<div class="myBoard onDeck">
+					<div class="cardsPlayedBoard"></div>
+					<div class="myHand"></div>
+				</div>
+				<div id="desc" class="hidden"></div>
+				
+				
+				
+				<div id="score" class="hidden"></div>
+				
+			</div>
+			<div id="inst" class="">
+				<h1>Guillotine</h1>
+				<h2>The revolutionary card game where you win by getting a head</h2>
+				<h3>Objective</h3>
+				<p>Collect the most points by beheading important nobles</p>
+				<h3>Overview</h3>
+				<p>Play is divided into 3 days. On each day, 10 nobles are lined up to await their turns at the guillotine. Players take turns playing action cards from their hands (possibly rearranging the order of the line) and then collecting nobles from the front of the line.</p>
+				<h3>Play</h3>
+				<ol>
+					<li>Play an action card (optional)</li>
+					<li>Collect the first noble in line by clicking the <strong>Executioner</strong></li>
+					<li>A new action card will be provided (whether or not you played one).</li>
+				</ol>
+
+				<div class="start">Let's get chopping!</div>
+			</div>
+		</div>
+				<script src="guillotine_MVC.js"></script>
+
+	</body>
+</html>

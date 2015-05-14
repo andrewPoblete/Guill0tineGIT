@@ -1,0 +1,310 @@
+[
+	{
+		"name": "Coiffeur",
+		"points": 1,
+		"color": "purple",
+		"position": 1
+	},
+	{
+		"name": "Piss Boy",
+		"points": 1,
+		"color": "purple",
+		"position": 2
+	},
+	{
+		"name": "Royal Cartographer",
+		"points": 1,
+		"color": "purple",
+		"position": 3
+	},
+	{
+		"name": "Countess",
+		"points": 2,
+		"color": "purple",
+		"description": "The Countess is worth +2 points if you also have the Count in your score pile.",
+		"position": 4
+	},
+	{
+		"name": "Lord",
+		"points": 2,
+		"color": "purple",
+		"description": "Draw an additional action card at the end of your turn after you collect this noble.",
+		"position" : 5
+	},
+	{
+		"name": "Lady in Waiting",
+		"points": 1,
+		"color": "purple",
+		"description" : "Draw an additional action card at the end of your turn after you collect this noble.",
+		"position": 6
+	},
+	{
+		"name": "Lady",
+		"points": 2,
+		"color": "purple",
+		"description" : "Draw an additional action card at the end of your turn after you collect this noble.",
+		"position": 7
+	},
+	{
+		"name": "Count",
+		"points": 2,
+		"color": "purple",
+		"description": "The Count is worth +2 points if you also have the Countess in you score pile.",
+		"position": 8
+	},
+	{
+		"name": "Robespierre",
+		"points": 3,
+		"color": "purple",
+		"description": "The day ends after you collect this noble. Discard any nobles remaining in line.",
+		"position": 9
+	},
+	{
+		"name": "Baron",
+		"points": 3,
+		"color": "purple",
+		"position" : 10
+	},
+	{
+		"name": "Duke",
+		"points": 3,
+		"color": "purple",
+		"position" : 11
+	},
+	{
+		"name": "Regent",
+		"points": 4,
+		"color": "purple",
+		"position" : 12
+	},
+	{
+		"name": "Marie Antoinette",
+		"points": 5,
+		"color": "purple",
+		"position" : 13
+	},
+	{
+		"name": "King Louis XVI",
+		"points": 5,
+		"color": "purple",
+		"position" : 14
+	},
+	{
+		"name": "General",
+		"points": 4,
+		"color": "red",
+		"description": "Add another noble from the noble deck to the end of the line after you collect this noble.",
+		"position" : 15
+	},
+	{
+		"name": "Master Spy",
+		"points": 4,
+		"color": "red",
+		"description": "After each action card is played, move this card to the end of the line.",
+		"position" : 16
+	},
+	{
+		"name": "Colonel",
+		"points": 3,
+		"color": "red",
+		"position" : 17
+	},
+	{
+		"name": "Palace Guard",
+		"points": 1,
+		"color": "red",
+		"description": "Each Palace Guard is worth a number of points equal to the number of Palace Guards in your score pile (including this one).",
+		"position" : 18
+	},
+	{
+		"name": "Palace Guard",
+		"points": 1,
+		"color": "red",
+		"description": "Each Palace Guard is worth a number of points equal to the number of Palace Guards in your score pile (including this one).",
+		"position" : 18
+	},
+	{
+		"name": "Palace Guard",
+		"points": 1,
+		"color": "red",
+		"description": "Each Palace Guard is worth a number of points equal to the number of Palace Guards in your score pile (including this one).",
+		"position" : 18
+	},
+	{
+		"name": "Palace Guard",
+		"points": 1,
+		"color": "red",
+		"description": "Each Palace Guard is worth a number of points equal to the number of Palace Guards in your score pile (including this one).",
+		"position" : 18
+	},
+	{
+		"name": "Palace Guard",
+		"points": 1,
+		"color": "red",
+		"description": "Each Palace Guard is worth a number of points equal to the number of Palace Guards in your score pile (including this one).",
+		"position" : 18
+	},
+	{
+		"name": "Lieutenant",
+		"points": 2,
+		"color": "red",
+		"position" : 19
+	},
+	{
+		"name": "Captain of the Guard",
+		"points": 2,
+		"color": "red",
+		"description": "Add another noble from the noble deck to the end of the line after you collect this noble.",
+		"position" : 20
+	},
+	{
+		"name": "Governor",
+		"points": 4,
+		"color": "green",
+		"position" : 21
+	},
+	{
+		"name": "Councilman",
+		"points": 3,
+		"color": "green",
+		"position" : 22
+	},
+	{
+		"name": "Mayor",
+		"points": 3,
+		"color": "green",
+		"position" : 23
+	},
+	{
+		"name": "Unpopular Judge",
+		"points": 2,
+		"color": "green",
+		"description": "No player may play an action card while the Unpopular Judge is at the front of the line.",
+		"position" : 24
+	},
+	{
+		"name": "Unpopular Judge",
+		"points": 2,
+		"color": "green",
+		"description": "No player may play an action card while the Unpopular Judge is at the front of the line.",
+		"position" : 24
+	},
+	{
+		"name": "Tax Collector",
+		"points": 2,
+		"color": "green",
+		"position" : 25
+	},
+	{
+		"name": "Land Lord",
+		"points": 2,
+		"color": "green",
+		"position" : 26
+	},
+	{
+		"name": "Sheriff",
+		"points": 1,
+		"color": "green",
+		"position" : 27
+	},
+	{
+		"name": "Sheriff",
+		"points": 1,
+		"color": "green",
+		"position" : 27
+	},
+	{
+		"name": "Rival Executioner",
+		"points": 1,
+		"color": "green",
+		"description": "Collect the top noble of the noble deck after you collect this noble.",
+		"position" : 28
+	},
+	{
+		"name": "Hero of the People",
+		"points": -3,
+		"color": "gray",
+		"position" : 29
+	},
+	{
+		"name": "The Clown",
+		"points": -2,
+		"color": "gray",
+		"description": "When you collect this noble, place it in another player's score pile.",
+		"position" : 30
+	},
+	{
+		"name": "Martyr",
+		"points": -1,
+		"color": "gray",
+		"position" : 31
+	},
+	{
+		"name": "Martyr",
+		"points": -1,
+		"color": "gray",
+		"position" : 31
+	},
+	{
+		"name": "Martyr",
+		"points": -1,
+		"color": "gray",
+		"position" : 31
+	},
+	{
+		"name": "Innocent Victim",
+		"points": -1,
+		"color": "gray",
+		"description": "Choose an action card from your hand and discard it after you collect this noble.",
+		"position" : 32
+	},
+	{
+		"name": "Tragic Figure",
+		"points": -1,
+		"color": "gray",
+		"description": "This noble is worth -1 point for every Gray noble in your score pile (including this one).",
+		"position" : 33
+	},
+	{
+		"name": "Cardinal",
+		"points": 5,
+		"color": "blue",
+		"position" : 34
+	},
+	{
+		"name": "Archbishop",
+		"points": 4,
+		"color": "blue",
+		"position" : 35
+	},
+	{
+		"name": "Bad Nun",
+		"points": 3,
+		"color": "blue",
+		"position" : 36
+	},
+	{
+		"name": "Heretic",
+		"points": 2,
+		"color": "blue",
+		"position" : 37
+	},
+	{
+		"name": "Bishop",
+		"points": 2,
+		"color": "blue",
+		"position" : 38
+	},
+	{
+		"name": "Wealthy Priest",
+		"points": 1,
+		"color": "blue",
+		"position" : 39
+	},
+	{
+		"name": "Wealthy Priest",
+		"points": 1,
+		"color": "blue",
+		"position" : 39
+	}
+]

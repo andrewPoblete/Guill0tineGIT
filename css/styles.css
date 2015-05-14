@@ -1,0 +1,419 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;	
+}
+
+body {
+	overflow: hidden;
+	background: url("../images/background1.jpg");
+}
+
+#wrapper {	
+	font-family: 'Alegreya', serif;
+	font-size: 62.5%;
+	width: 950px;
+	height: 1000px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	background-size: 100% 500px;
+	background-image: url("../images/tableTop.jpg");
+	background-repeat: repeat-y;
+	box-shadow: 0px 0px 20px 8px #333;
+}
+
+/*Instructions*/
+#inst {
+	position: absolute;
+	top: 23px;
+  	left: 209px;
+	width: 520px;
+	padding: 30px;
+	background-color: rgba(71, 172, 176, .8);
+	border: 2px solid #146163;
+
+}
+
+/*Inst title*/
+#inst h1 {
+	color: #e0feff;
+	margin-top: -15px;
+	font-size: 2.7rem;
+	margin-bottom: -13px;
+	text-shadow: 1px 1px 1px #0c393b;
+}
+
+#inst h1:first-letter {
+	font-size: 5.0rem;
+	margin-top: 13px;
+	margin-bottom: 4px;
+	float: left;
+	line-height: 52.6px;
+}
+
+/*Inst subtitle*/
+#inst h2 {
+	font-size: 1.1rem;
+	font-style: italic;
+	position: relative;
+	left: 2px;
+	color: #0c393b;
+}
+
+/*Inst play headers*/
+#inst h3 {
+	font-size: 1.6rem;
+	margin-top: 13px;
+	margin-bottom: 4px;
+	color: #0c393b;
+	clear: both;
+}
+
+
+/*Inst actual details*/
+#inst p, #inst li {
+	font-size: 1.4rem;
+	font-style: italic;
+	line-height: 1.3rem;
+	padding-left: 10px;
+}
+
+#inst li {
+	margin-left: 30px;
+}
+
+.start {
+	margin: 16px auto 0;
+	padding: 5px 10px;
+	width: 200px;
+	text-align: center;
+	background-color: #146163;
+	display: block;
+	border: 1px solid #0a3233;
+	line-height: 2.0rem;
+	cursor: pointer;
+	box-shadow: 1px 1px 2px #0a3233;
+	
+	font-size: 1.2rem;
+	color: #e0feff;
+	text-shadow: 1px 1px 1px #0c393b;
+}
+
+
+/* Various board */
+#gameBoard {
+	width: 100%;
+	height: 600px;
+	min-height: 600px;
+	/*background-color: green; change this to some brown*/
+	position: relative;	
+}
+
+.myBoard {
+	position: absolute;
+	left: -2000px;
+	bottom: 8px;
+}
+
+.cardsPlayedBoard {
+	width: 100%;
+	height: 130px;
+	position: absolute;
+	bottom: 140px;
+	left: 160px;
+}
+
+.myHand {
+	height: 130px;	
+	padding-left: 160px;
+}
+
+/*Header values*/
+header {
+	position: absolute;	
+	right: 0px;
+	top: 0px;
+	padding: 10px;
+	z-index: 200;
+	background-color: rgba(71, 172, 176, .8);
+	width: 200px;
+	/*border-radius: 6px;*/
+	border-bottom-left-radius: 6px;
+	border-left: 2px solid #146163;
+	border-bottom: 2px solid #146163;
+
+	/*-moz-border-radius: 25px 10px / 10px 25px;*/
+	/*border-radius: 103px 33px 103px 0/ 0 16px 65px 0;*/
+}
+
+header ul, header ul li {
+	position: relative;
+	right: 0;
+	bottom: 0;
+	display: inline-block;
+	font-size: 1.3rem;
+
+}
+/*Day*/
+header li:nth-child(1) {
+	color: #0a3233;
+	border-right: 1px solid #555;
+	padding-right: 15px;
+	text-shadow: 1px 1px 1px #0c393b;
+}
+/*Player name*/
+header li:nth-child(2) {
+	color: #e0feff;
+	padding-left: 10px;
+	font-style: italic;
+	text-shadow: 1px 1px 1px #0c393b;
+
+}
+
+/*Description styles for hover over*/
+#desc {
+	background-color: rgba(94, 89, 88, .5);
+	border: 4px solid #e0feff;
+	width: 400px;
+	position: absolute;
+	left: 158px;
+	top: 13px;
+	padding: 10px;
+	color: #e0feff;
+	border-radius: 6px;
+	transition: all 1s ease;
+	box-shadow: 2px 2px 2px black;
+
+}
+
+/*the name of the card*/
+#desc h3 {
+	font-size: 1.8rem;
+	display: inline;
+	text-shadow: 2px 2px 2px #0c393b;
+}
+
+/*the points*/
+#desc h4 {
+	font-size: 1.2rem;
+	float: right;
+	display: inline;
+	font-style: italic;
+	margin-top: 10px;
+	color: #a8a8a8;
+	text-shadow: 1px 1px 1px #0c393b;
+}
+
+/*actual description*/
+#desc p {
+	margin-top: 7px;
+	font-size: 1.3rem;
+	font-style: italic;
+	clear: both;
+}
+
+#score {
+	background-image: url("../images/basket.png");
+	background-repeat: no-repeat;
+	color: white;
+	font-size: 97px;
+	text-align: center;
+	line-height: 116px;
+	text-shadow: 3px 3px black;
+	height: 135px;
+	width: 132px;
+	position: absolute;
+	left: 15px;
+	bottom: 10px;
+
+}
+
+#actions {
+	background-color: olive;
+}
+
+
+/*Card properties*/
+div.card {
+	position: relative;
+	border: 4px solid white;
+	width: 88px;
+	height: 124px;
+	display: inline-block;
+	margin-right: 20px;
+	border-radius: 7px;
+	transition: all 1s;	
+	box-shadow: 2px 2px 4px #111;
+	z-index: 0;
+}
+
+#noblesLine {
+	position: relative;
+	top: 185px;
+	left: 18px;
+}
+
+#noblesLine .card {
+	background-image: url("../images/nobleSprite.jpg");
+	background-position: 0 0;
+	/*background-size: 985px;*/
+	background-repeat: no-repeat;
+	background-color: white;
+}
+
+.cardsPlayedBoard .card, .myHand .card {
+	background-image: url("../images/actionSprite.png");
+	background-position: 0 0;
+	/*background-size: 985px;*/
+	background-repeat: no-repeat;
+	background-color: white;
+	border-top-width: 6px;	/*adjust for difference in action card size*/
+}
+
+.cardsPlayedBoard .card {
+	opacity: .8;
+}
+
+#noblesLine .card {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*Actions that happen to the cards when they are selected*/
+.card.selected {
+	border-color: #47ACB0;
+}
+
+#noblesLine .card.illegal {
+	opacity: .5;
+	transition: opacity 1s ease;
+	cursor: default;
+}
+
+.card.clone {
+	border-color: #47ACB0;
+	z-index: 100;
+	transition: border .2s;
+	transition: z-index .1s;
+}
+
+#noblesLine .card:not(.clone):nth-child(1) {
+	-webkit-transform: translate3d(160%, 0, 0);
+	z-index: 50;
+}
+
+#noblesLine .card:not(.clone):nth-child(2) {
+	-webkit-transform: translate3d(230%, 0, 0);
+	z-index: 48;
+}
+
+#noblesLine .card:not(.clone):nth-child(3) {
+	-webkit-transform: translate3d(300%, 0, 0);
+	z-index: 46;
+}
+#noblesLine .card:not(.clone):nth-child(4) {
+	-webkit-transform: translate3d(370%, 0, 0);
+	z-index: 44;
+}
+#noblesLine .card:not(.clone):nth-child(5) {
+	-webkit-transform: translate3d(440%, 0, 0);
+	z-index: 42;
+}
+
+#noblesLine .card:not(.clone):nth-child(6) {
+	-webkit-transform: translate3d(510%, 0, 0);
+	z-index: 40;
+}
+#noblesLine .card:not(.clone):nth-child(7) {
+	-webkit-transform: translate3d(580%, 0, 0);
+	z-index: 38;
+}
+#noblesLine .card:not(.clone):nth-child(8) {
+	-webkit-transform: translate3d(650%, 0, 0);
+	z-index: 36;
+}
+#noblesLine .card:not(.clone):nth-child(9) {
+	-webkit-transform: translate3d(720%, 0, 0);
+	z-index: 34;
+}
+#noblesLine .card:not(.clone):nth-child(10) {
+	-webkit-transform: translate3d(790%, 0, 0);
+	z-index: 32;
+}
+#noblesLine .card:not(.clone):nth-child(11) {
+	-webkit-transform: translate3d(860%, 0, 0);
+	z-index: 30;
+}
+#noblesLine .card:not(.clone):nth-child(12) {
+	-webkit-transform: translate3d(930%, 0, 0);
+	z-index: 28;
+}
+#noblesLine .card:not(.clone):nth-child(13) {
+	-webkit-transform: translate3d(1000%, 0, 0);
+	z-index: 26;
+}
+
+#chop {
+	background-size: 150px;
+	height: 460px;
+  	width: 151px;
+	background-image: url("../images/executioner.png");
+	background-repeat: no-repeat;
+	position: relative;
+	left: 17px;
+	top: -29px;
+	cursor: pointer;
+	z-index: 0;
+}
+
+
+#winner {
+	position: absolute;
+	top: 23px;
+  	left: 209px;
+	width: 520px;
+	padding: 30px;
+	background-color: rgba(71, 172, 176, .8);
+	border: 2px solid #146163;
+	text-align: center
+}
+
+/*Winning player*/
+#winner h1 {
+	color: #e0feff;
+	margin-top: -15px;
+	font-size: 3.7rem;
+	margin-bottom: -13px;
+	text-shadow: 1px 1px 1px #0c393b;
+}
+
+/*Text that announces who the winner is*/
+#winner h3 {
+	font-size: 1.6rem;
+	margin-top: 13px;
+	margin-bottom: 4px;
+	color: #0c393b;
+	clear: both;
+}
+
+/*Final score*/
+#winner h4 {
+	font-size: 2.3rem;
+	font-style: italic;
+	margin-top: 20px;
+	
+}
+
+
+/*Utility classes*/
+.hidden {
+	display: none;
+}
+
+.active {
+	cursor: pointer;
+}
