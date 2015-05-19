@@ -89,7 +89,7 @@ var Model = {
     	Model.currPlayer = Model.players[0];
     	View.initView();
 
-    	setTimeout(Model.startDay, 1000);
+		setTimeout(Model.startDay, 1000);
     },
     "startDay": function() {
    
@@ -398,8 +398,9 @@ var View = {
 
 		//get the moving card's location apply it to the clone
 		//so it sits exactly where the other card is 
-		var $currLocation = $("div.card").eq(curr).css("-webkit-transform");
-		$clone.css("-webkit-transform", $currLocation);
+		
+		var $currLocation = $("div.card").eq(curr).css("transform");
+		$clone.css("transform", $currLocation);
 		$clone.addClass("clone");
 
 		//get z-index of destination so it can be inserted between the
@@ -649,6 +650,7 @@ console.log("Done!");
 	- When any deck runs out, don't throw an error
 	- change players hands before animation of next player occurs.
 	- When moving to front, selected card does not pop out.
+	- Able to select another action card once you played one.
 	*/
 /*NEED TO DO
 	- Start screen
