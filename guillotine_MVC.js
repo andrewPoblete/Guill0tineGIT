@@ -1,24 +1,20 @@
-// Rules for Guillotine
+//Guillotine Rules: http://www.orderofgamers.com/downloads/Guillotine_v1.pdf		
 
-// - 2 players
-// - each player play consecutively
-// -
 
-//Model is the Rules
-//Model.players[0];
 var i = 0;
 
 var Model, Controller, View = {};
-//css and html changes go here
 
-
+//game statistics and backend
 var Model = {	
 	"view": View,
 	"players" : [],      
     "turnNumber" : 0,  
     "currPlayer": {}, 
     "nextTurn": function() {
-    	//switch players
+    	/*
+			Switch players
+    	*/
     	Model.currPlayer = Model.players[Model.turnNumber % 2];
     	Model.turnNumber += 1;
     	View.drawBoard();
@@ -26,6 +22,9 @@ var Model = {
     	setTimeout(View.drawBoard, 2000);
     },
 	"buildDeck": function ( whichDeck, deck ) {
+		/*
+			Build a deck from the associated json files
+    	*/
 		var jsonFile;
 
 		if(whichDeck === "action") {
@@ -44,6 +43,9 @@ var Model = {
 		});	
 	},
 	"dealNoble": function(amt) {
+		/*
+			Deal the specified noble cards to the board
+    	*/
 		for(var i = 0; i < amt; i++) {
 			//take the top cards off of noble deck 
 			//and move it into play
@@ -53,7 +55,11 @@ var Model = {
 		}		
 	},
 	"dealAction": function(amt, player) {
-			// var player = this.currPlayer;
+		/*
+			Deal specified amount of cards to the current player.
+			Eventually to be used to give users cards when it is
+			their turn
+    	*/
 
 		for(var i = 0; i < amt; i++) {
 			//take the top cards off of noble deck 
@@ -74,6 +80,12 @@ var Model = {
     "noblesInPlay" : [],
     "day": 1,
     "init": function() {
+    	/*
+			Initialize all game components including 
+			- creating all players
+			- making the decks
+			- resetting turn count and assigning player 1
+    	*/
     	Model.players.length = 0;
 
     	var player1 = new Player("Player 1");
@@ -92,7 +104,9 @@ var Model = {
 		setTimeout(Model.startDay, 1000);
     },
     "startDay": function() {
-   
+   		/*
+			At the start of the day, deal new set of nobles
+    	*/
     	if(Model.day === 1 ){
     		Model.dealAction(5, Model.players[0]);
     		Model.dealAction(5, Model.players[1]);
@@ -100,19 +114,29 @@ var Model = {
 
     	Model.dealNoble(10);
  	
- 		//draw the board items and slide player 1 into view
+ 		//draw the board items and slide next player into view
     	View.drawBoard();
     	View.slideIn();
 
     },
     "changeLine": function(curr, moveTo) {
-		//inserts the noble into another spot in the line
+		/*
+			Move the selected noble into another 
+			position in the array
+    	*/
 		var placeHolder;
 
 		placeHolder = Model.noblesInPlay.splice(curr, 1); //splice returns an array
 		Model.noblesInPlay.splice(moveTo, 0, placeHolder[0]);
     },
     "endTurn": function() {
+    	/*
+			After the Executioner is clicked, the
+			players turn ends which triggers 
+			- clean up of all unlocked cards
+			- check for end of day
+			- swapping out to the next player
+    	*/
 		var player = Model.currPlayer;
 		
 		//Erase all played cards that aren't supposed to stay on the board
@@ -137,6 +161,11 @@ var Model = {
 		}
 	},
     "endDay": function() {
+    	/*
+			If the noble line is empty, we will
+			end the current day.
+    	*/
+
 		var day = Model.day;
 		var nobles = Model.noblesInPlay;
 		//if day = 3 & Noble line is empty,
@@ -149,7 +178,6 @@ var Model = {
 			
 			Model.endGame();
 		} else if (nobles.length === 0) {
-			// console.log("I should be incrementiong");
 			Model.day++;
 			Model.startDay();
 		}
@@ -157,6 +185,12 @@ var Model = {
 		return false;
 	},	
     "endGame": function() {
+    	/*
+			If the end of day is reached and
+			we are in the last day, the game will
+			end and display the winner
+    	*/
+
     	var $container = $("<div id='winner'>" +
     					       "<h3>The winner is...</h3>" +
     					    "</div>");
@@ -189,34 +223,10 @@ var Model = {
 
     	console.log("Game over!");
     },
-    "hoverDetails": function() {
-    	var $name = $(this).find("h3").text();
-    	var $points = $(this).find("h4").text() || 0;
-    	var $desc1 = $(this).find("p").eq(0).text();
-    	var $color = $(this).find("p").eq(1).text();
-    	var $descDiv = $("#desc");
-    	var pointsText = "";
-
-    	//do not display undefined in the div
-    	if($desc1 === "undefined") {
-    		$desc1 = "";
-    	}
-
-    	if($points) {
-			pointsText = "Points " + $points;
-    	}
-
-    	$name = $("<h3>" + $name + "</h3>");
-    	$points = $("<h4>" + pointsText + "</h4>");
-    	$points.css("color", Model.setColor($color));
-    	$desc1 = $("<p>" + $desc1 + "</p>");
-
-    	//show the name and desc to the user using text
-    	//since the images are too small to read.
-    	$descDiv.append($name).append($points).append($desc1);
-    	$("#desc").removeClass("hidden");
-    },
 	"setColor": function(color) {
+		/*
+			Set the color when displaying the hover details
+    	*/
 		switch(color) {
 			case "red":
 				return "#eb5b4b";
@@ -233,12 +243,18 @@ var Model = {
 		}
 	}
 };
+
 //logic and interactions
 var Controller = {
 	"model": Model,
 	"view": View,
 	
 	"nobleClicked": function(event) {
+		/*
+			If an action card is played that would move
+			nobels in the line, this triggers the locations
+			a user will be able to click
+		*/
 		event.preventDefault();
 
 		var player = Controller.model.currPlayer;
@@ -294,10 +310,11 @@ var Controller = {
 		//for future, action can allow to play another action
 		player.playedCard = true;
 
-		/*if the valid card selection would go beyond the first card,
-		need to handle the negative instance which would allow user to select
-		cards from the end (because negative numbers count from the end of 
-		the array).
+		/*
+			if the valid card selection would go beyond the first card,
+			need to handle the negative instance which would allow user to select
+			cards from the end (because negative numbers count from the end of 
+			the array).
 		*/
 		if(indexStart < 0) {
 			amtToMove += indexStart;
@@ -311,31 +328,19 @@ var Controller = {
 			}
 
 			$("#noblesLine div").eq(i).addClass("illegal");
-			// $("#noblesLine div").css({"top": "+=10px"});
 		}
 
 		if(exact) {
 			$("#noblesLine div").eq(indexStart).removeClass("illegal").css({"left": "+=28px"});
 			$("#noblesLine div").eq(indexStart + amtToMove).removeClass("illegal").css({"left": "+=28px"});
 
-			//this needs to be cleaned up
 			$("#noblesLine div").eq(indexStart).on("click", function( event ) {
-				//"this" references the object that was clicked.
-				//change the model
-				Controller.model.changeLine(currIndex, $(this).index());  
-
-				//change the view
-				//fix Controller.view vs View
-				View.insert(currIndex, $(this).index());
+				Controller.model.changeLine(currIndex, $(this).index());  //changes the model
+				View.insert(currIndex, $(this).index()); //changes the view
 			});
 			$("#noblesLine div").eq(indexStart + amtToMove).on("click", function( event ) {
-				//"this" references the object that was clicked.
-				//change the model
-				Controller.model.changeLine(currIndex, $(this).index());  
-
-				//change the view
-				//fix Controller.view vs View
-				View.insert(currIndex, $(this).index());
+				Controller.model.changeLine(currIndex, $(this).index());  //changes the model
+				View.insert(currIndex, $(this).index()); //changes the view
 			});
 		} else {
 			for( var i = indexStart; i <= indexStart + amtToMove; i++ ) {
@@ -344,13 +349,9 @@ var Controller = {
 
 				$("#noblesLine div").eq(i).removeClass("illegal").css({"left": "+=28px"});
 				$("#noblesLine div").eq(i).on("click", function( event ) {
-					//"this" references the object that was clicked.
-					//change the model
-					Controller.model.changeLine(currIndex, $(this).index());  
 
-					//change the view
-					//fix Controller.view vs View
-					View.insert(currIndex, $(this).index());
+					Controller.model.changeLine(currIndex, $(this).index());  //changes the model
+					View.insert(currIndex, $(this).index()); //changes the view
 				});
 
 			}
@@ -358,6 +359,10 @@ var Controller = {
 
 	},
     "moveToPlayed": function() {
+    	/*
+			Move a selected action card into the 
+			player's played pile
+		*/
     	var player = Controller.model.currPlayer;
     	var x;
 
@@ -375,10 +380,14 @@ var Controller = {
     }
 };
 
+//what player sees
 var View = {
 	"model": Model,
 	"controller": Controller,
 	"clearBoard": function () {
+		/*
+			Remove all board elements
+		*/
 		$("#noblesLine").empty();
 		$(".myHand").empty();
 		$(".cardsPlayedBoard").empty();
@@ -386,6 +395,10 @@ var View = {
 		$("#desc").empty();
 	},
 	"insert": function(curr, moveTo) {
+		/*
+			When moving a noble from one location
+			to another, this renders the animation
+		*/
 		var offset = 62.36;
 		var $clone;
 		var $line = $("#noblesLine .card");
@@ -398,11 +411,12 @@ var View = {
 
 		//get the moving card's location apply it to the clone
 		//so it sits exactly where the other card is 
-		
+
 		var $currLocation = $("div.card").eq(curr).css("transform");
 		$clone.css("transform", $currLocation);
 		$clone.addClass("clone");
 
+		
 		//get z-index of destination so it can be inserted between the
 		//z-index of the 2 cards
 		var $moveZ = parseInt($("div.card").eq(moveTo).css("z-index"));
@@ -433,22 +447,53 @@ var View = {
 			$
 		});
 
-		// line.css("left", "");	//remove the style that lifted the cards out of position
 		setTimeout(View.drawBoard, 3000);
 	},
+	"hoverDetails": function() {
+		/*
+			Display card details since print on graphics
+			is too small
+		*/
+    	var $name = $(this).find("h3").text();
+    	var $points = $(this).find("h4").text() || 0;
+    	var $desc1 = $(this).find("p").eq(0).text();
+    	var $color = $(this).find("p").eq(1).text();
+    	var $descDiv = $("#desc");
+    	var pointsText = "";
+
+    	//do not display undefined in the div
+    	if($desc1 === "undefined") {
+    		$desc1 = "";
+    	}
+
+    	//only display points if it is a noble card
+    	if($points) {
+			pointsText = "Points " + $points;
+    	}
+
+    	$name = $("<h3>" + $name + "</h3>");
+    	$points = $("<h4>" + pointsText + "</h4>");
+    	$points.css("color", Model.setColor($color));
+    	$desc1 = $("<p>" + $desc1 + "</p>");
+
+    	$descDiv.append($name).append($points).append($desc1);
+    	$("#desc").removeClass("hidden");
+    },
 	"drawBoard": function() {
+		/*
+			Clears the board are redraws all elements with 
+			their respective event listeners
+		*/
 		var model = View.model;
 		var controller = View.controller;
 		var player = Controller.model.currPlayer;
 
 		View.clearBoard();
 		
+		//ensure there is no empty cards in the deck
 		model.noblesInPlay.clean();
-	
-		//player.hand = player.hand.clean();
-		// player.actionsPlayed = player.actionsPlayed.clean();
 		
-		// console.log("My array", model.noblesInPlay);
+		//draw the board elements
 		View.drawNobles(model, player);
 		View.drawHand();
 		View.drawPlayed(player);
@@ -459,11 +504,15 @@ var View = {
 		$("#chop").off();
 		$("#chop").on("click", View.model.currPlayer.collect);
 
-		$(".card").hover(View.model.hoverDetails, function() {			
+		$(".card").hover(View.hoverDetails, function() {			
 			$("#desc").empty().addClass("hidden");
 		});
 	},
 	"drawHand": function() {
+		/*
+			Draws hands for both players, including
+			the cards off of frame.
+		*/
 		var players = View.model.players;
 		var currPlayer = View.model.currPlayer;
 
@@ -477,7 +526,6 @@ var View = {
 						     "<p class='hidden'>" + card.description + "</p>" + 
 						     "</div>");
 
-				// $cardDiv = $("<div class='card'>" + card.name + "</div>");
 				$cardDiv = View.setBackground(card, $cardDiv);
 
 				$cardDiv.on("click", View.controller.moveToPlayed);	
@@ -486,16 +534,23 @@ var View = {
 					//build current div
 					$(".myBoard.current .myHand").append($cardDiv); //put the cards into the line
 				} else {
-					//build to regular div
+					//build to other players div
 					$(".myBoard.onDeck .myHand").append($cardDiv); //put the cards into the line
 				}
 			});
 		}
 	},
 	"setBackground": function(card, $cardDiv) {
-		/* create and add a hidden element into the DOM so we can grab the CSS height and width
-		   did this so that if there is a change in h and w, we only need to do it in the css file
-		   one place.
+		/*
+			Set background for all cards in play
+			using a css sprite
+		*/
+
+		/* 
+			Create and add a hidden element into the DOM so 
+			we can grab the CSS height and width. Did this so 
+			that if there is a change in height/width, we only need
+			to do it in the css file.
 		*/
 		var $cardTemp = $("<div class='card hidden'></div>");
 		$("#noblesLine").append($cardTemp);
@@ -516,6 +571,10 @@ var View = {
 		return $cardDiv;
 	},
 	"drawPlayed": function(player) {
+		/*
+			Draw all action cards in play for 
+			the specified user
+		*/
 		
 		player.actionsPlayed.forEach(function(card, index) {
 			var $cardDiv;
@@ -532,7 +591,9 @@ var View = {
 		});
 	},
 	"drawNobles": function(model, player) {	
-		// var actionsPlayed = View.model.currPlayer.actionsPlayed;
+		/*
+			Draw all nobles cards in play
+		*/
 		
 		model.noblesInPlay.forEach(function(card, index) {
 			var $cardDiv;
@@ -565,6 +626,9 @@ var View = {
 		});
 	},	
 	"drawHeader": function() {
+		/*
+			Draw current player and day
+		*/
 		var $header = $("header");
 		var $ul = $("<ul>");
 		$ul.append("<li>Day " + Model.day + "</li>");
@@ -573,6 +637,9 @@ var View = {
 		$header.append($ul);
 	},
 	"drawScore": function() {
+		/*
+			Draw score
+		*/
 		var player = Model.currPlayer;
 
 		//change this when functionality to draw both players instead of just current is added
@@ -580,21 +647,32 @@ var View = {
 		$("#score").text(score);
 	},
 	"slideIn": function() {
+		/*
+			Animate the next players deck moving into frame
+		*/
 		$(".myBoard.onDeck").removeAttr("style");
 		View.drawBoard();
 		$(".myBoard.current").animate({"left" : 0}, 800);
 	},
 	"slideOut": function() {
+		/*
+			Animate current user's hand out of frame
+			when their turn is over.
+		*/
 		$(".myBoard.onDeck").animate({"left" : "5000px"}, 1000, View.slideIn);
 	},
 	"removeCard": function(position) {
-		//functionality to remove any card will be added here in future
+		/*
+			functionality to remove any card will be added here in future
+		*/
 		position = position || 0;
 
 		$("#noblesLine .card").eq(0).remove()
 	},
 	"initView": function() {
-		//initialize the view so that all board elements can be seen
+		/*
+			Initialize the view so that all board elements can be seen
+		*/
 		$("#inst").remove();
 		$("header").removeClass("hidden");
 		$("#chop").removeClass("hidden");
@@ -636,12 +714,6 @@ Array.prototype.clean = function() {
 }
 
 $("#inst .start").on("click", Model.init);
-// console.log(Model.nobleDeck);
-// do {
-// 	Model.startDay();
-// 	console.log("waiting....");
-// } while (!Model.nobleDeck);
-
 console.log("Done!");
 
 /*BUGS!!
@@ -652,16 +724,6 @@ console.log("Done!");
 	- When moving to front, selected card does not pop out.
 	- Able to select another action card once you played one.
 	*/
-/*NEED TO DO
-	- Start screen
-	- Win screen 
-*/
-/*NICE TO HAVE
-	- Animated text appearing
-*/
-	
-
-
 
  /*
  C - Should be able to start the game.
@@ -669,10 +731,10 @@ console.log("Done!");
  C - A user should know which player's turn it is
  N - Animate action card fade out before div slides out. Keep locked cards
  N - show locked cards
- N - Calculate the grays properly.
+ N - Calculate the gray cards properly.
  N - Exact user movement.
  N - Who's the winner is with what score. Restart.
- N - A user should see an animation when collecting a Nobel
+ N - A user should see an animation when collecting a Noble
  N - A user should have a pause between turns so the next player can't see
  their cards.
  N - Other card functionalities
