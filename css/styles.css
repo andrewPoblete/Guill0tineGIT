@@ -302,57 +302,83 @@ div.card {
 }
 
 #noblesLine .card:not(.clone):nth-child(1) {
+	transform: translate3d(160%, 0, 0);
+	-moz-transform: translate3d(160%, 0, 0);
 	-webkit-transform: translate3d(160%, 0, 0);
 	z-index: 50;
 }
 
 #noblesLine .card:not(.clone):nth-child(2) {
+	transform: translate3d(230%, 0, 0);
+	-moz-transform: translate3d(230%, 0, 0);
 	-webkit-transform: translate3d(230%, 0, 0);
 	z-index: 48;
 }
 
 #noblesLine .card:not(.clone):nth-child(3) {
+	transform: translate3d(300%, 0, 0);
+	-moz-transform: translate3d(300%, 0, 0)
 	-webkit-transform: translate3d(300%, 0, 0);
 	z-index: 46;
 }
 #noblesLine .card:not(.clone):nth-child(4) {
+	transform: translate3d(370%, 0, 0);
+	-moz-transform: translate3d(370%, 0, 0);
 	-webkit-transform: translate3d(370%, 0, 0);
 	z-index: 44;
 }
 #noblesLine .card:not(.clone):nth-child(5) {
+	transform: translate3d(440%, 0, 0);
+	-moz-transform: translate3d(440%, 0, 0);
 	-webkit-transform: translate3d(440%, 0, 0);
 	z-index: 42;
 }
 
 #noblesLine .card:not(.clone):nth-child(6) {
+	transform: translate3d(510%, 0, 0);
+	-moz-transform: translate3d(510%, 0, 0);
 	-webkit-transform: translate3d(510%, 0, 0);
 	z-index: 40;
 }
 #noblesLine .card:not(.clone):nth-child(7) {
+	-transform: translate3d(580%, 0, 0);
+	-moz-transform: translate3d(580%, 0, 0);
 	-webkit-transform: translate3d(580%, 0, 0);
 	z-index: 38;
 }
 #noblesLine .card:not(.clone):nth-child(8) {
+	-transform: translate3d(650%, 0, 0);
+	-moz-transform: translate3d(650%, 0, 0);
 	-webkit-transform: translate3d(650%, 0, 0);
 	z-index: 36;
 }
 #noblesLine .card:not(.clone):nth-child(9) {
+	-transform: translate3d(720%, 0, 0);
+	-moz-transform: translate3d(720%, 0, 0);
 	-webkit-transform: translate3d(720%, 0, 0);
 	z-index: 34;
 }
 #noblesLine .card:not(.clone):nth-child(10) {
+	-transform: translate3d(790%, 0, 0);
+	-moz-transform: translate3d(790%, 0, 0);
 	-webkit-transform: translate3d(790%, 0, 0);
 	z-index: 32;
 }
 #noblesLine .card:not(.clone):nth-child(11) {
+	-transform: translate3d(860%, 0, 0);
+	-moz-transform: translate3d(860%, 0, 0);
 	-webkit-transform: translate3d(860%, 0, 0);
 	z-index: 30;
 }
 #noblesLine .card:not(.clone):nth-child(12) {
+	-transform: translate3d(930%, 0, 0);
+	-moz-transform: translate3d(930%, 0, 0);
 	-webkit-transform: translate3d(930%, 0, 0);
 	z-index: 28;
 }
 #noblesLine .card:not(.clone):nth-child(13) {
+	-transform: translate3d(1000%, 0, 0);
+	-moz-transform: translate3d(1000%, 0, 0);
 	-webkit-transform: translate3d(1000%, 0, 0);
 	z-index: 26;
 }
